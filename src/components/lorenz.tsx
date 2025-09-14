@@ -20,7 +20,7 @@ export default function LorenzAttractor() {
         <LorenzParticle />
         <ambientLight intensity={0.5} />
       </Canvas>
-      <div className="absolute bottom-30 left-1/2 -translate-x-1/2 flex gap-2 flex-col" style={{ color: "rgba(255,255,255,0.5)" }}>
+      <div className="relative bottom-30 left-1/2 -translate-x-1/2 flex gap-2 flex-col" style={{ color: "rgba(255,255,255,0.5)" }}>
         <div className="flex gap-4 justify-center">
           <Latex>$\dot x = \sigma (y - x)$</Latex>
           <Latex>$\dot y = x (\rho - z) - y$</Latex>
