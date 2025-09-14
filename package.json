@@ -5,7 +5,8 @@
   "homepage": "https://L3ungj.github.io/blog",
   "scripts": {
     "predeploy": "npm run build && echo. > out/.nojekyll",
-    "deploy": "gh-pages -d out --dotfiles",
+    "deploy": "gh-pages -d out --dotfiles && dotenv npm run ftp-deploy",
+    "ftp-deploy": "ftp-deploy --username %FTP_USERNAME% --password %FTP_PASSWORD% --server %FTP_SERVER% --local-dir ./out/ --server-dir /%DOMAIN_NAME%/htdocs/blog/",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
@@ -14,6 +15,9 @@
   "dependencies": {
     "@react-three/drei": "^10.7.3",
     "@react-three/fiber": "^9.3.0",
+    "@samkirkland/ftp-deploy": "^1.2.5",
+    "dotenv": "^17.2.2",
+    "dotenv-cli": "^10.0.0",
     "gray-matter": "^4.0.3",
     "gsap": "^3.13.0",
     "next": "^15.5.2",
